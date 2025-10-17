@@ -96,13 +96,6 @@ int main(int argc, char** argv)
     return -1;
   }
 
-  if (!session->connected)
-  {
-    ROS_ERROR("Cannot connect to session");
-    session->close();
-    return -1;
-  }
-
   // Deal with ALBrokerManager singleton (add your broker into NAOqi)
   boost::shared_ptr<Robot> robot = boost::make_shared<Robot>(session);
 
